@@ -2,14 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import './App.css'; 
-import slide1 from './image/slide1.jpg';
-import slide2 from './image/slide2.jpg';
-import slide3 from './image/slide3.jpg';
-import slide4 from './image/slide4.jpg';
+
+
 
 function App() {
-  const images = [slide1, slide2 ,slide3, slide4]; 
-  const colors = ['green', 'blue', 'pink','purple']; 
+  const images = ["slide1.webp", "slide2.webp" ,"slide3.webp", "slide4.webp"]; 
+  const colors = ['green', 'Teal', '	Maroon','purple']; 
 
   const [index, setIndex] = useState(0);
 
@@ -17,30 +15,97 @@ function App() {
     
     const interval = setInterval(() => {
       setIndex((prevIndex) => (prevIndex + 1) % images.length);
-    }, 2000);
+    }, 3000);
 
     return () => {
       clearInterval(interval); 
     };
   }, []);
 
+ 
   return (
+   
+   
+  
     <div
       className="App"
        style={{
         backgroundColor: colors[index],
         backgroundImage: `url(${images[index]})`,
-        // backgroundSize: 'cover',
+        backgroundSize: '50% auto',
         backgroundRepeat: 'no-repeat',
-        // width: '100vw',
+        backgroundPosition:'right',
+        width: '100vw',
         height: '100vh',
-        transition: 'background 1s', 
-      //  marginLeft:'30%'
+        transition: 'background 3s', 
+        display:'flex',
+        // textAlign:'center',
+        // alignItems:'center',
+        padding:'70px',
+        color:'white',
+        right:'0',
+        position:'absolute',
+        marginTop:'5%',
+        marginLeft:'7%',
+        // position:'absolute',
+        flexDirection: 'column',
+    
+        
+        // marginLeft:'30%'
       }}
+     
     >
+        &nbsp; 
+         &nbsp; &nbsp; &nbsp; &nbsp;
+         <h4>Find listings across</h4>
+         &nbsp; &nbsp; &nbsp; &nbsp;
+         <h1>Global Multi-Platform Networks</h1>
+         <div></div>
+         &nbsp; &nbsp; &nbsp; &nbsp;
+
+         <form class="form-inline my-2 my-lg-0">
+         <input
+          className="form-control"
+          type="search"
+          placeholder="try searching food"
+          aria-label="Search"
+          style={{
+            height: '50px', 
+            width: '450px',  
+          }}
+        />
+      <button
+          type="button"
+          className="btn btn-primary"
+          style={{
+            height: '50px',  
+            fontSize: '20px', 
+          }}
+        >
+          Search
+        </button>
       
-    </div>
+    
+    </form>
+         
+    <div> &nbsp;
+      <h4>Popular:<button type="button" class="btn btn-outline-light"style={{ marginRight: '10px' }}>Food</button>
+      <button type="button" class="btn btn-outline-light"style={{ marginRight: '10px' }}>Apparel</button>
+      <button type="button" class="btn btn-outline-light"style={{ marginRight: '10px' }}>Beauty</button>
+      <button type="button" class="btn btn-outline-light"style={{ marginRight: '10px' }}>Furniture</button>
+     </h4>
+  </div>
+  
+   
+  </div>
+      
+        
+      
+    
   );
 }
 
 export default App;
+
+
+
